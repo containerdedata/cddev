@@ -1,0 +1,135 @@
+/* Flipbook */
+
+body {
+    background-color: #0a0a0a;
+    margin: 0;
+    padding: 0;
+    min-width: 1400px;
+    min-height: 880px;
+}
+
+.wrapper {
+    width: 1400px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.flipbook-viewport {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 100px;
+}
+
+.flipbook-viewport .container {
+    position: RELATIVE;
+    margin-top: 60px;
+    margin-left: 50%;
+    width: 1086px;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+
+.flipbook-viewport .flipbook {
+    width: 1086px;
+    height: 768px;
+}
+
+.flipbook-viewport .page {
+    width: 1086px;
+    height: 768px;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.flipbook .page {
+    -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    -ms-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    -o-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+
+.flipbook-viewport .page img {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin: 0;
+}
+
+.flipbook-viewport .shadow {
+    -webkit-transition: -webkit-box-shadow 0.5s;
+    -moz-transition: -moz-box-shadow 0.5s;
+    -o-transition: -webkit-box-shadow 0.5s;
+    -ms-transition: -ms-box-shadow 0.5s;
+
+    -webkit-box-shadow: 0 0 20px #ccc;
+    -moz-box-shadow: 0 0 20px #ccc;
+    -o-box-shadow: 0 0 20px #ccc;
+    -ms-box-shadow: 0 0 20px #ccc;
+    box-shadow: 0 0 20px #ccc;
+}
+
+
+
+.wrapper,
+.flipbook-viewport,
+.container,
+.flipbook {
+    pointer-events: none;
+}
+
+.flipbook *,
+#help-arrow {
+    pointer-events: all;
+}
+
+.flipbook {
+    opacity: 0;
+    transition: opacity 0.2s ease-in;
+    -webkit-transition: opacity 0.2s ease-in;
+    -moz-transition: opacity 0.2s ease-in;
+    -ms-transition: opacity 0.2s ease-in;
+    -o-transition: opacity 0.2s ease-in;
+}
+
+.flipbook.visible {
+    opacity: 1;
+}
+
+/* Helper arrow */
+
+#help-arrow {
+    background-image: url(../assets/img/flecha.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    z-index: 5;
+    top: 800px;
+    right: 90px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+    -webkit-transition: opacity 0.3s ease-in;
+    -moz-transition: opacity 0.3s ease-in;
+    -ms-transition: opacity 0.3s ease-in;
+    -o-transition: opacity 0.3s ease-in;
+}
+
+#help-arrow.visible {
+    opacity: 1;
+}
+
+#help-arrow.done {
+    opacity: 0;
+}
